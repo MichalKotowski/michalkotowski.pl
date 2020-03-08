@@ -4,19 +4,21 @@
 .header {
     width: 100%;
     padding: 20px 0;
+    border-bottom: 1px solid greyLighter;
 }
 
 .brand {
     text-decoration: none;
-    color: greyDark;
+    color: greyDarker;
     transition: .3s;
+    margin-right: 20px;
     &:hover {
         color: greyMedium;
     }
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 960px;
     padding: 0 20px;
     margin: 0 auto;
     display: flex;
