@@ -3,6 +3,6 @@ import Layout from "../layout/Layout"
 
 export default () => (
     <Layout>
-        Test
+        About
     </Layout>
 )

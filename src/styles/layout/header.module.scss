@@ -1,0 +1,46 @@
+@value colors: "../base/colors.scss";
+@value greyDarker, greyDark, greyMedium, greyLight, greyLighter from colors;
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.brand {
+    text-decoration: none;
+    color: greyDark;
+    transition: .3s;
+    &:hover {
+        color: greyMedium;
+    }
+}
+
+.container {
+    max-width: 1140px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.navigationItem {
+    margin: 0;
+    a {
+        text-decoration: none;
+        color: greyMedium;
+        transition: .3s;
+        &:hover {
+            color: greyDarker;
+        }
+    }
+    &:not(:last-child) {
+        margin-right: 40px;
+    }
+}
