@@ -1,6 +1,8 @@
 import Typography from "typography"
 
 const typography = new Typography({
+    baseFontSize: '16px',
+    baseLineHeight: 1.73,
     googleFonts: [
         {
             name: "Poppins",
@@ -12,8 +14,6 @@ const typography = new Typography({
         {
             name: "Montserrat",
             styles: [
-                '300',
-                '300i',
                 '400',
                 '400i',
                 '700',

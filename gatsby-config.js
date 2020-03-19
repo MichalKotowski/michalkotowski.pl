@@ -7,7 +7,8 @@
 module.exports = {
     siteMetadata: {
         title: `Michał Kotowski`,
-        titleTemplate: `%s - Web developer based in Warsaw`
+        description: `Web developer based in Warsaw`,
+        author: `Michał Kotowski`
     },
     plugins: [
         {
@@ -18,6 +19,19 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `Michał Kotowski`,
+                short_name: `MichalKotowski`,
+                start_url: `/`,
+                background_color: `#0c0d0d`,
+                theme_color: `#f2f3f2`,
+                display: `standalone`,
+                icon: `src/images/icon.png`,
+            },
+        },
+        `gatsby-plugin-offline`,
+        {
             resolve: `gatsby-plugin-netlify`,
             options: {
                 headers: {
@@ -25,6 +39,12 @@ module.exports = {
                     '/*.css': ['cache-control: public, max-age=31536000, immutable'],
                     '/sw.js': ['cache-control: public, max-age=0, must-revalidate'],
                 },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+              trackingId: "UA-161203999-1",
             },
         },
         `gatsby-transformer-remark`,
