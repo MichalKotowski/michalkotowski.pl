@@ -9,7 +9,7 @@ export default ({ data }) => {
         <Layout>
             <SEO title='Thoughts' />
             <h3>
-                Whenever I have enough time, I love to<br></br>
+                Whenever I have enough time, I love to <br></br>
                 share my thoughts about almost everything
             </h3>
             {data.allMarkdownRemark.edges.map(({ node }) => (
