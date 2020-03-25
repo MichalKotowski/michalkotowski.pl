@@ -49,12 +49,12 @@ module.exports = {
         },
         `gatsby-transformer-remark`,
         `gatsby-plugin-sass`,
+        `gatsby-plugin-react-helmet`,
         {
-            resolve: `gatsby-plugin-typography`,
+            resolve: `gatsby-plugin-sass-resources`,
             options: {
-                pathToConfigModule: `src/utils/typography`,
-            },
-        },
-        `gatsby-plugin-react-helmet`
+                resources: ['./src/styles/base/resources.scss']
+            }
+        }
     ]
 }

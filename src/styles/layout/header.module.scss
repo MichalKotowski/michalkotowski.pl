@@ -1,24 +1,18 @@
-@value colors: "../base/colors.scss";
-@value greyDarker, greyDark, greyMedium, greyLight, greyLighter from colors;
-
 .header {
     width: 100%;
     padding: 20px 0;
-    border-bottom: 1px solid greyLighter;
+    border-bottom: 1px solid $grey02;
 }
 
 .brand {
-    text-decoration: none;
-    color: greyDarker;
-    transition: .3s;
     margin-right: 20px;
     &:hover {
-        color: greyMedium;
+        color: $grey04;
     }
 }
 
 .container {
-    max-width: 960px;
+    max-width: 940px;
     padding: 0 20px;
     margin: 0 auto;
     display: flex;
@@ -29,17 +23,13 @@
 .navigation {
     display: flex;
     list-style: none;
-    margin: 0;
 }
 
 .navigationItem {
-    margin: 0;
     a {
-        text-decoration: none;
-        color: greyMedium;
-        transition: .3s;
+        color: $grey04;
         &:hover {
-            color: greyDarker;
+            color: $grey08;
         }
     }
     &:not(:last-child) {

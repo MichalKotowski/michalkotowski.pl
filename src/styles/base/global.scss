@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Poppins:700,700i');
+
+
 :global {
     *,
     *::before,
@@ -20,11 +23,61 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        line-height: inherit;
+        color: $grey08;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        transition: .2s;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: 68px;
+    }
+
+    h2 {
+        font-size: 33px;
+        line-height: 55px;
+    }
+
+    h3 {
+        font-size: 26px;
+        line-height: 45px;
+    }
+
+    h4 {
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    h5 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    h6 {
+        font-size: 13px;
+        line-height: 25px;
+    }
+
+    p, a {
+        color: $grey08;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: .2s;
+    }
+
+    strong {
+        font-weight: 700;
     }
 
     main {
         padding: 40px 0;
+        p + p {
+            margin-top: 40px;
+        }
     }
 }
 

@@ -2,21 +2,21 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../layout/Layout"
 import SEO from "../components/SEO"
-import style from "../styles/components/single.module.scss"
+import style from "../styles/components/thoughts.module.scss"
 
 export default ({ data }) => {
     return (
         <Layout>
             <SEO title='Thoughts' />
-            <h3>
+            <h4>
                 Whenever I have enough time, I love to <br></br>
                 share my thoughts about almost everything
-            </h3>
+            </h4>
             {data.allMarkdownRemark.edges.map(({ node }) => (
-                <div key={node.id} class={style.single}>
+                <div key={node.id} className={style.thoughts}>
                     <Link to={node.fields.slug}>
                         <span>{node.frontmatter.date}</span>
-                        <h4>{node.frontmatter.title}</h4>
+                        <h5>{node.frontmatter.title}</h5>
                     </Link>
                 </div>
             ))}
