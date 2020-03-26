@@ -17,10 +17,6 @@ export default () => (
         <p>
             I would like to thank the creators of lofi hip hop without whom I would not be able to concentrate and achieve all the things I have achieved.
         </p>
-        <p>
-            I believe that the world can become much more beautiful place by spreading love and respect.
-            I hope that one day I will love myself enough to be able to effectively share my mindset with others.
-        </p>
         <img className={style.image} src={me} alt="Michał Kotowski" />
     </Layout>
 )
