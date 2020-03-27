@@ -65,7 +65,7 @@ We declare `$el` on which we will later initiate our function. `init` is a place
     })(jQuery);
 ```
 
-And here goes the most important part of our work. `if (this.length > 0)` checks if function was called at least once. `if (this.length > 1)` then we check whether the function has been called more than once. Let's consider the `else` case first. We name our `this` as `$el`, and run `init` function where all the magic happpens. But what happens if function `toggleMenu` is called twice, triply or even fourfold? For each call, our our function falls into 'else' creating many independent instances.
+And here goes the most important part of our work. `if (this.length > 0)` checks if function was called at least once. `if (this.length > 1)` then we check whether the function has been called more than once. Let's consider the `else` case first. We name our `this` as `$el`, and run `init` function where all the magic happpens. But what if function `toggleMenu` is called twice, triple or even fourfold? For each call, our function falls into 'else' creating many independent instances.
 
 ```javascript
     // main.js
@@ -95,7 +95,7 @@ And here goes the most important part of our work. `if (this.length > 0)` checks
     })(jQuery);
 ```
 
-We created a really simple function that toggles class when button is clicked. Now all we have to do is call it.
+We created a really simple function that toggles class when button is clicked. Now all we have to do is call it when our document is ready.
 
 ```javascript
     // main.js
