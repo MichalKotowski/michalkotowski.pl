@@ -7,7 +7,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (node.internal.type === `MarkdownRemark`) {
         let slug;
         if (Object.prototype.hasOwnProperty.call(node, 'frontmatter') && Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')) {
-            slug = `/${_.kebabCase(node.frontmatter.title)}/`
+            const kebabCase = string => string.replace(/\s+/g, '-').toLowerCase();
+            slug = `/${kebabCase(node.frontmatter.title)}/`
         } else {
             slug = createFilePath({ node, getNode, basePath: `posts` })
         }

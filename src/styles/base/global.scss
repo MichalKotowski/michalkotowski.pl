@@ -70,6 +70,13 @@
         transition: .2s;
     }
 
+    .gatsby-highlight {
+        margin-bottom: 40px;
+        p, a, span {
+            font-family: inherit;
+        }
+    }
+
     strong {
         font-weight: 700;
     }

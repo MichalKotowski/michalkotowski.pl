@@ -12,6 +12,7 @@ export default ({ data }) => {
             <h3>{single.frontmatter.title}</h3>
             <p className={style.author}>By <Link to="/about/">Michał Kotowski</Link></p>
             <div className={style.content} dangerouslySetInnerHTML={{ __html: single.html }} />
+            <Link to="/thoughts/" className={style.back}>Back to thoughts</Link>
         </Layout>
     )
 }
