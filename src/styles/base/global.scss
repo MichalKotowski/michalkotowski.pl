@@ -20,6 +20,7 @@
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
+        background-color: $grey01;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -59,7 +60,7 @@
         line-height: 25px;
     }
 
-    p, a {
+    p, a, span {
         color: $grey08;
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
@@ -71,6 +72,11 @@
 
     strong {
         font-weight: 700;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     main {
