@@ -1,10 +1,15 @@
 .container {
-    transition: .5s;
-    max-width: 840px;
-    padding: 111px 20px 40px;
     margin: 0 auto;
     display: block;
-    width: 100%;
+    max-width: 840px;
+    padding: 0 20px;
+}
+
+.transition {
+    transition: .5s;
+    max-width: 800px;
+    padding: 111px 0 40px;
+    width: calc(100% - 40px);
     opacity: 0;
     transform: translateX(-40px);
     position: absolute;

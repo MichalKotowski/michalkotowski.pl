@@ -5,14 +5,12 @@ import styles from "../styles/components/container.module.scss"
 const timeout = 500
 const getTransitionStyles = {
     exiting: {
-
     },
     exited: {
         opacity: 0,
         transform: `translateX(40px)`,
     },
     entering: {
-
     },
     entered: {
         opacity: 1,
@@ -33,13 +31,15 @@ class Transition extends React.PureComponent {
                     }}
                 >
                     {status => (
-                        <div
-                            className={styles.container}
-                            style={{
-                                ...getTransitionStyles[status],
-                            }}
-                        >
-                            {children}
+                        <div className={styles.container}>
+                            <div
+                                className={styles.transition}
+                                style={{
+                                    ...getTransitionStyles[status],
+                                }}
+                            >
+                                {children}
+                            </div>
                         </div>
                     )}
                 </ReactTransition>
