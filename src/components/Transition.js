@@ -1,5 +1,6 @@
 import React from "react"
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group"
+import styles from "../styles/components/container.module.scss"
 
 const timeout = 500
 const getTransitionStyles = {
@@ -33,13 +34,8 @@ class Transition extends React.PureComponent {
                 >
                     {status => (
                         <div
+                            className={styles.container}
                             style={{
-                                transition: `.5s`,
-                                maxWidth: `800px`,
-                                width: `100%`,
-                                opacity: 0,
-                                transform: `translateX(-40px)`,
-                                position: `absolute`,
                                 ...getTransitionStyles[status],
                             }}
                         >

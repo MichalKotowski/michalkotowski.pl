@@ -39,3 +39,22 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .singleThought {
+        a {
+            .head {
+                justify-content: initial;
+                flex-direction: column;
+                margin-bottom: 20px;
+                p {
+                    line-height: 24px;
+                }
+                span {
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}

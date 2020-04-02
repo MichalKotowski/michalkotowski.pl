@@ -1,6 +1,11 @@
 .container {
+    transition: .5s;
     max-width: 840px;
-    padding: 0 20px;
+    padding: 111px 20px 40px;
     margin: 0 auto;
     display: block;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-40px);
+    position: absolute;
 }
