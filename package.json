@@ -16,6 +16,7 @@
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-plugin-google-analytics": "^2.1.38",
+    "gatsby-plugin-layout": "^1.2.1",
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-netlify": "^2.1.34",
     "gatsby-plugin-offline": "^3.0.42",
@@ -29,7 +30,8 @@
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

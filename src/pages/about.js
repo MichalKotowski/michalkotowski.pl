@@ -1,11 +1,10 @@
 import React from "react"
-import Layout from "../layout/Layout"
 import me from "../images/michalkotowski.jpg"
 import SEO from "../components/SEO"
 import style from "../styles/components/about.module.scss"
 
 export default () => (
-    <Layout>
+    <>
         <SEO title='About' />
         <h4 className={style.heading}>
             Hello, World!
@@ -18,5 +17,5 @@ export default () => (
             I would like to thank the creators of lofi hip hop without whom I would not be able to concentrate and achieve all the things I have achieved.
         </p>
         <img className={style.image} src={me} alt="Michał Kotowski" />
-    </Layout>
+    </>
 )

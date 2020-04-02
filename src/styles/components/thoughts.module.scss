@@ -6,7 +6,7 @@
         width: 100%;
         background-color: white;
         border-radius: 5px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.02);
+        box-shadow: $shadow01;
         border: 1px solid $grey02;
         .head {
             display: flex;

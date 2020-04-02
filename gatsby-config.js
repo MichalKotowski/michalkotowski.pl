@@ -90,7 +90,13 @@ module.exports = {
             resolve: `gatsby-plugin-sass-resources`,
             options: {
                 resources: ['./src/styles/base/resources.scss']
-            }
-        }
+            },
+        },
+        {
+            resolve: `gatsby-plugin-layout`,
+            options: {
+                component: require.resolve(`./src/layout/Layout.js`),
+            },
+        },
     ]
 }

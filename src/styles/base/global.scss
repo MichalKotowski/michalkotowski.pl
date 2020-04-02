@@ -21,6 +21,7 @@
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         background-color: $grey01;
+        overflow-y: scroll;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -87,7 +88,7 @@
     }
 
     main {
-        padding: 40px 0;
+        padding: 111px 0 40px;
         p + p {
             margin-top: 40px;
         }

@@ -1,12 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../layout/Layout"
 import SEO from "../components/SEO"
 import style from "../styles/components/thoughts.module.scss"
 
 export default ({ data }) => {
     return (
-        <Layout>
+        <>
             <SEO title='Thoughts' />
             <h4>
                 Whenever I have enough time, I love to <br></br>
@@ -27,7 +26,7 @@ export default ({ data }) => {
                     </Link>
                 </div>
             ))}
-        </Layout>
+        </>
     )
 }
 
