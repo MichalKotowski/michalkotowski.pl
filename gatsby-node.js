@@ -2,12 +2,13 @@ const path = require(`path`)
 const _ = require(`lodash`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const kebabCase = string => string.replace(/\s+/g, '-').toLowerCase();
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
         let slug;
         if (Object.prototype.hasOwnProperty.call(node, 'frontmatter') && Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')) {
-            const kebabCase = string => string.replace(/\s+/g, '-').toLowerCase();
             slug = `/${kebabCase(node.frontmatter.title)}/`
         } else {
             slug = createFilePath({ node, getNode, basePath: `posts` })
@@ -72,7 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     tags.forEach(tag => {
         createPage({
-            path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+            path: `/tag/${kebabCase(tag.fieldValue)}/`,
             component: tagTemplate,
             context: {
                 tag: tag.fieldValue,

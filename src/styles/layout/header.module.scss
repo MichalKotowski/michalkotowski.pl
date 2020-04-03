@@ -37,6 +37,9 @@
             color: $grey08;
         }
     }
+    .active {
+        color: $grey08;
+    }
     &:not(:last-child) {
         margin-right: 40px;
     }

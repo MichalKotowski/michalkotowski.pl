@@ -1,9 +1,15 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 import SEO from "../components/SEO"
 import style from "../styles/components/thoughts.module.scss"
 
 export default ({ data }) => {
+    function tagRedirect(category, event) {
+        event.preventDefault()
+        category = category.toLowerCase()
+        navigate(`/tag/${category}`)
+    }
+
     return (
         <>
             <SEO title='Thoughts' />
@@ -20,7 +26,7 @@ export default ({ data }) => {
                         </div>
                         <div className={style.body}>
                             {node.frontmatter.tags.map(( category, index ) => (
-                                <span key={index} className={style.category}>{category}</span>
+                                <span role="button" tabIndex="-1" onClick={(event) => tagRedirect(category, event)} key={index} className={style.tag}>{category}</span>
                             ))}
                         </div>
                     </Link>

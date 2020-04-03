@@ -1,65 +1,59 @@
 import React from "react"
-import PropTypes from "prop-types"
-import kebabCase from "lodash/kebabCase"
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
+import SEO from "../components/SEO"
+import style from "../styles/components/thoughts.module.scss"
 
-const TagsPage = ({
-    data: {
-        allMarkdownRemark: { group },
-        site: {
-            siteMetadata: { title },
-        },
-    },
-}) => (
-    <div>
-        <Helmet title={title} />
-        <div>
-            <h1>Tags</h1>
-            <ul>
-                {group.map(tag => (
-                    <li key={tag.fieldValue}>
-                        <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                            {tag.fieldValue} ({tag.totalCount})
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    </div>
-)
+const Tags = ({ pageContext, data }) => {
+    function tagRedirect(category, event) {
+        event.preventDefault()
+        category = category.toLowerCase()
+        navigate(`/tag/${category}`)
+    }
 
-TagsPage.propTypes = {
-    data: PropTypes.shape({
-        allMarkdownRemark: PropTypes.shape({
-            group: PropTypes.arrayOf(
-                PropTypes.shape({
-                    fieldValue: PropTypes.string.isRequired,
-                    totalCount: PropTypes.number.isRequired,
-                }).isRequired
-            ),
-        }),
-        site: PropTypes.shape({
-            siteMetadata: PropTypes.shape({
-                title: PropTypes.string.isRequired,
-            }),
-        }),
-    }),
+    return (
+        <>
+            <SEO title='Thoughts' />
+            <h4>
+                Whenever I have enough time, I love to <br></br>
+                share my thoughts about almost everything
+            </h4>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+                <div key={node.id} className={style.singleThought}>
+                    <Link to={node.fields.slug}>
+                        <div className={style.head}>
+                            <p>{node.frontmatter.title}</p>
+                            <span>{node.frontmatter.date}</span>
+                        </div>
+                        <div className={style.body}>
+                            {node.frontmatter.tags.map(( category, index ) => (
+                                <span role="button" tabIndex="-1" onClick={(event) => tagRedirect(category, event)} key={index} className={style.tag}>{category}</span>
+                            ))}
+                        </div>
+                    </Link>
+                </div>
+            ))}
+            <Link to="/thoughts/" className={style.back}>Back to thoughts</Link>
+        </>
+    )
 }
 
-export default TagsPage
+export default Tags
 
-export const pageQuery = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        allMarkdownRemark(limit: 2000) {
-            group(field: frontmatter___tags) {
-                fieldValue
-                totalCount
+export const query = graphql`
+    query($tag: String!) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {frontmatter: {tags: {in: [$tag]}}}) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        date(formatString: "DD MMMM, YYYY")
+                        tags
+                    }
+                    fields {
+                        slug
+                    }
+                }
             }
         }
     }

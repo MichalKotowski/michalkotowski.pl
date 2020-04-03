@@ -1,6 +1,6 @@
 import React from "react"
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group"
-import styles from "../styles/components/container.module.scss"
+import style from "../styles/components/container.module.scss"
 
 const timeout = 500
 const getTransitionStyles = {
@@ -31,9 +31,9 @@ class Transition extends React.PureComponent {
                     }}
                 >
                     {status => (
-                        <div className={styles.container}>
+                        <div className={style.container}>
                             <div
-                                className={styles.transition}
+                                className={style.transition}
                                 style={{
                                     ...getTransitionStyles[status],
                                 }}

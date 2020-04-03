@@ -38,6 +38,18 @@
             }
         }
     }
+    .tag {
+        z-index: 10;
+    }
+}
+
+.back {
+    display: inline-block;
+    margin-top: 40px;
+    color: $grey03;
+    &:hover {
+        color: $grey05;
+    }
 }
 
 @media screen and (max-width: 600px) {
