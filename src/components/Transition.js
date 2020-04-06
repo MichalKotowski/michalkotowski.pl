@@ -5,10 +5,11 @@ import style from "../styles/components/container.module.scss"
 const timeout = 500
 const getTransitionStyles = {
     exiting: {
-    },
-    exited: {
         opacity: 0,
         transform: `translateX(40px)`,
+    },
+    exited: {
+
     },
     entering: {
     },

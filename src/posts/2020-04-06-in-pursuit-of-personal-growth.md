@@ -1,0 +1,15 @@
+---
+title: "In pursuit of personal growth"
+date: "2020-04-06"
+tags: ["personal", "self development"]
+---
+
+Lately, my life became really repetitive and boring. And while everyone is currently spending their entire time at home waiting for epidemic to end, my lifestyle didn't change at all compared to the state before quarantine. Don't get me wrong, I understand that I'm not living in a TV show - and as an adult, I have to accept that things are not as exciting as they used to be. Still, it's not the thrill I'm looking for. Actually, I'm in the strange moment in my life, when I can't find any correct answer to the question that goes like 'how you want your life to look like?'. It makes me go crazy, as I'm constantly finding more and more small and big habits that don't let me stay in one place. Overall, after a few months I'll really appreciate it. But now? Every day looks dull, and I feel like a boat without a rudder. I'm trying to go in every direction at the same time, so it looks like I'm not moving at all.
+
+What helped me a little to stay sane during these hard times was to change my mindset. Sadly, I still have a lot of bad days where common sense is completely turned off. My mood tends to have unexpected twists - we are at constant war and unfortunately, sometimes I lose. But even during my worst periods of time, I have this big list of things that I am doing everyday or every second day no matter how bad current circumstances are.
+
+My frustration cames from the fact, that without a goal I feel a little bit lost. However, from the day I began to focus on the process and not on the final result, I found out that it got easier to cope with dissatisfaction. Sure, it's great to have an objective so you know when you're moving forward. But sometimes you don't have a pleasure to have a goal, and that's OK. Real change happens during the process. You're not who you wish to be - what really defines you are the things you're doing. And if you do something over and over again, your identity changes as well. As a result, it's not about wanting something anymore. It's about being your new self. This guy you always wished to be? Think about what he would do in similar life encounters to yours, how he spends his free time or how he behave - and then just act like him.
+
+I have this beautiful version of me in my head. A stoic, talented web developer who knows what he wants and is not afraid to reach it. Full of love and passion. I am him. Sometimes I deviate from the designated path. But I learn, improve and with every new boss fight I leave the battlefield richer in experience and strength. And as time go, **I find myself sitting in peace more often**.
+
+Being in a constant war is exhausting. Yesterday was hell. But today I woke up stronger. Happier. Another day, another fight. I appreciate every victory. It's just crazy how you can go from hating to love yourself within a dozen hours. Crazy world we livin' in, but in spite of all - it's good to be here. Cheers!

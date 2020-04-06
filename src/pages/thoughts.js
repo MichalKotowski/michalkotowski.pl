@@ -10,6 +10,13 @@ export default ({ data }) => {
         navigate(`/tag/${category}`)
     }
 
+    function onKeyDownTagRedirect(category, event) {
+        if (event.keyCode === 13) {
+            category = category.toLowerCase()
+            navigate(`/tag/${category}`)
+        }
+    }
+
     return (
         <>
             <SEO title='Thoughts' />
@@ -26,7 +33,7 @@ export default ({ data }) => {
                         </div>
                         <div className={style.body}>
                             {node.frontmatter.tags.map(( category, index ) => (
-                                <span role="button" tabIndex="-1" onClick={(event) => tagRedirect(category, event)} key={index} className={style.tag}>{category}</span>
+                                <button onClick={(event) => tagRedirect(category, event)} onKeyDown={(event) => onKeyDownTagRedirect(category, event)} key={index} className={style.tag}>{category}</button>
                             ))}
                         </div>
                     </Link>
