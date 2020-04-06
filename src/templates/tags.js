@@ -1,50 +1,49 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link, graphql, navigate } from "gatsby"
 import SEO from "../components/SEO"
 import style from "../styles/components/thoughts.module.scss"
 
-const Tags = ({ pageContext, data }) => {
-    function tagRedirect(category, event) {
-        event.preventDefault()
-        category = category.toLowerCase()
-        navigate(`/tag/${category}`)
-    }
+export default class Tags extends Component {
+    render() {
+        const { data, pageContext } = this.props
 
-    function onKeyDownTagRedirect(category, event) {
-        if (event.keyCode === 13) {
-            category = category.toLowerCase()
-            navigate(`/tag/${category}`)
+        function tagRedirect(category, event) {
+            let slug = category.replace(/\s/g, '-').toLowerCase()
+            if (event.keyCode === 13) {
+                navigate(`/tag/${slug}`)
+            } else {
+                event.preventDefault()
+                navigate(`/tag/${slug}`)
+            }
         }
+
+        return (
+            <>
+                <SEO title='Thoughts' />
+                <h4 className={style.category}>
+                    Current category
+                    <span>{pageContext.tag}</span>
+                </h4>
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                    <div key={node.id} className={style.singleThought}>
+                        <Link to={node.fields.slug}>
+                            <div className={style.head}>
+                                <p>{node.frontmatter.title}</p>
+                                <span>{node.frontmatter.date}</span>
+                            </div>
+                            <div className={style.body}>
+                                {node.frontmatter.tags.map(( category, index ) => (
+                                    <button onClick={(event) => tagRedirect(category, event)} onKeyDown={(event) => tagRedirect(category, event)} key={index} className={style.tag}>{category}</button>
+                                ))}
+                            </div>
+                        </Link>
+                    </div>
+                ))}
+                <Link to="/thoughts/" className={style.back}>Back to thoughts</Link>
+            </>
+        )
     }
-
-    return (
-        <>
-            <SEO title='Thoughts' />
-            <h4>
-                Whenever I have enough time, I love to <br></br>
-                share my thoughts about almost everything
-            </h4>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-                <div key={node.id} className={style.singleThought}>
-                    <Link to={node.fields.slug}>
-                        <div className={style.head}>
-                            <p>{node.frontmatter.title}</p>
-                            <span>{node.frontmatter.date}</span>
-                        </div>
-                        <div className={style.body}>
-                            {node.frontmatter.tags.map(( category, index ) => (
-                                <button onClick={(event) => tagRedirect(category, event)} onKeyDown={(event) => onKeyDownTagRedirect(category, event)} key={index} className={style.tag}>{category}</button>
-                            ))}
-                        </div>
-                    </Link>
-                </div>
-            ))}
-            <Link to="/thoughts/" className={style.back}>Back to thoughts</Link>
-        </>
-    )
 }
-
-export default Tags
 
 export const query = graphql`
     query($tag: String!) {

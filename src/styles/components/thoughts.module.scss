@@ -55,6 +55,19 @@
     }
 }
 
+.category {
+    color: $grey03;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    span {
+        display: block;
+        font-size: 20px;
+        line-height: 36px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .singleThought {
         a {

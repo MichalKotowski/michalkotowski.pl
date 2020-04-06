@@ -37,10 +37,17 @@ export default class Header extends Component {
     
     render() {
         const { isScrolled, isMobile } = this.state
+        const { isThought } = this.props
 
-        const ListLink = props => (
+        const isCurrentThought = props => {
+            if (isThought === true && props.children === 'thoughts') {
+                return true
+            }
+        }
+
+        const ListLink = (props, isThought) => (
             <li className={style.navigationItem}>
-                <Link to={props.to} activeClassName={style.active}>{props.children}</Link>
+                <Link to={props.to} activeClassName={style.active} className={isCurrentThought(props) && style.active}>{props.children}</Link>
             </li>
         )
 

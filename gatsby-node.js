@@ -65,6 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: blogPostTemplate,
             context: {
                 slug: node.fields.slug,
+                isThought: true,
             },
         })
     })
@@ -77,6 +78,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: tagTemplate,
             context: {
                 tag: tag.fieldValue,
+                isThought: true,
             },
         })
     })

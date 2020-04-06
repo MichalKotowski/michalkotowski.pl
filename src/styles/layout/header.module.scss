@@ -40,6 +40,9 @@
     .active {
         color: $grey08;
     }
+    .inactive {
+        color: $grey04;
+    }
     &:not(:last-child) {
         margin-right: 40px;
     }
