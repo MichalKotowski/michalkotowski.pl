@@ -1,5 +1,5 @@
 ---
-title: "In pursuit of personal growth"
+title: "In a pursuit of personal growth"
 date: "2020-04-06"
 tags: ["personal", "self development"]
 ---
