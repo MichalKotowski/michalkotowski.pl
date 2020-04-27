@@ -1,0 +1,68 @@
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.card {
+    display: inline-block;
+    padding: 20px 25px 20px 25px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: $shadow01;
+    // border: 1px solid $grey02;
+    transform: translateY(0);
+    max-width: 375px;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+    &:before {
+        content: '';
+        mask-size: cover;
+        width: 125px;
+        height: 125px;
+        display: block;
+        position: absolute;
+        left: -25px;
+        top: 50%;
+        transform: translateY(-50%) translateX(0);
+        background-color: $grey01;
+        transition: .5s;
+    }
+    &:first-child {
+        &:before {
+            mask-image: url('../../images/github.svg');
+        }
+    }
+    &:last-child {
+        &:before {
+            mask-image: url('../../images/mail01.svg');
+            height: 150px;
+            width: 150px;
+            top: 50%;
+            left: -10px;
+            background-color: none;
+        }
+    }
+    h5 {
+        color: $grey03;
+    }
+    p {
+        color: $grey08;
+        font-weight: 400;
+    }
+    span {
+        color: $grey03;
+    }
+    &:hover {
+        transform: translateY(-2px);
+        transition: .1s;
+        box-shadow: $shadow02;
+        &:before {
+            background-color: $grey03;
+            transform: translateY(-50%) translateX(10px);
+        }
+    }
+}

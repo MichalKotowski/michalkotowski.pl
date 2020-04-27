@@ -12,4 +12,4 @@ My frustration cames from the fact, that without a goal I feel a little bit lost
 
 I have this beautiful version of me in my head. A stoic, talented web developer who knows what he wants and is not afraid to reach it. Full of love and passion. I am him. Sometimes I deviate from the designated path. But I learn, improve and with every new boss fight I leave the battlefield richer in experience and strength. And as time go, **I find myself sitting in peace more often**.
 
-Being in a constant war is exhausting. Yesterday was hell. But today I woke up stronger. Happier. Another day, another fight. I appreciate every victory. It's just crazy how you can go from hating to love yourself within a dozen hours. Crazy world we livin' in, but in spite of all - it's good to be here. Cheers!
+Being in a constant war is exhausting. Yesterday was hell. But today I woke up stronger. Happier. Another day, another fight. I appreciate every victory. It's just insane how you can go from hating to love yourself within a dozen hours. Crazy world we livin' in, but in spite of all - it's good to be here. Cheers!
