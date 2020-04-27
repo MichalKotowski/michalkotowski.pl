@@ -20,8 +20,22 @@ const getTransitionStyles = {
 }
 
 class Transition extends React.PureComponent {
+    state = {
+        isLoaded: false,
+    }
+
+    componentDidUpdate() {
+        setTimeout(() => {
+            if ( this.props.isLoading === false && this.state.isLoaded === false ) {
+                this.setState({isLoaded: true})
+            }
+        }, 500)
+    }
+
     render() {
         const { children, location } = this.props
+        const { isLoaded } = this.state
+        
         return (
             <TransitionGroup>
                 <ReactTransition
@@ -32,7 +46,13 @@ class Transition extends React.PureComponent {
                     }}
                 >
                     {status => (
-                        <div className={style.container}>
+                        <div 
+                            className={style.container}
+                            style={{
+                                opacity: isLoaded ? `1` : `0`,
+                                transform: isLoaded ? `translateX(0)` : `translateX(-40px)`
+                            }}
+                        >
                             <div
                                 className={style.transition}
                                 style={{

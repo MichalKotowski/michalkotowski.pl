@@ -6,6 +6,7 @@ export default class Header extends Component {
     state = {
         isScrolled: false,
         isMobile: false,
+        isLoaded: false,
     }
 
     componentDidMount() {
@@ -17,6 +18,14 @@ export default class Header extends Component {
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll)
         window.removeEventListener('resize', this.handleMobile)
+    }
+
+    componentDidUpdate() {
+        setTimeout(() => {
+            if ( this.props.isLoading === false && this.state.isLoaded === false ) {
+                this.setState({isLoaded: true})
+            }
+        }, 1)
     }
 
     handleScroll = () => {
@@ -36,7 +45,7 @@ export default class Header extends Component {
     }
     
     render() {
-        const { isScrolled, isMobile } = this.state
+        const { isScrolled, isMobile, isLoaded } = this.state
         const { isThought } = this.props
 
         const isCurrentThought = props => {
@@ -45,7 +54,7 @@ export default class Header extends Component {
             }
         }
 
-        const ListLink = (props, isThought) => (
+        const ListLink = (props) => (
             <li className={style.navigationItem}>
                 <Link to={props.to} activeClassName={style.active} className={isCurrentThought(props) && style.active}>{props.children}</Link>
             </li>
@@ -55,7 +64,8 @@ export default class Header extends Component {
             <header 
                 className={style.header}
                 style={{
-                    padding: isScrolled ? `10px 0` : `20px 0`
+                    padding: isScrolled ? `10px 0` : `20px 0`,
+                    transform: isLoaded ? `translateY(0)` : `translateY(-71px)`
                 }}
             >
                 <div className={style.container}>

@@ -3,6 +3,9 @@
     display: block;
     max-width: 840px;
     padding: 0 20px;
+    opacity: 0;
+    transition: .5s;
+    transform: translateX(-40px);
 }
 
 .transition {

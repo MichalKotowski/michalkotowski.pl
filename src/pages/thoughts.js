@@ -6,7 +6,6 @@ import style from "../styles/components/thoughts.module.scss"
 export default class Thoughts extends Component {
     render() {
         const { data } = this.props
-        console.log(this)
 
         function tagRedirect(category, event) {
             let slug = category.replace(/\s/g, '-').toLowerCase()
