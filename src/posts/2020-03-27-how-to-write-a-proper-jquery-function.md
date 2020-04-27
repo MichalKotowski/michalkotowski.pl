@@ -131,4 +131,4 @@ We created a really simple function that toggles class when button is clicked. N
 
 Voilà! As you can see, creating function this way makes it really transparent and keeps your javascript file tidy. With this solution you can call the function as many times as you want, and each of the calls will be completely independent.
 
-Hopefully the concept was presented in a simple manner. It will probably take a while before I'll implement comments on my website, so if anyone have any questions - I will gladly answer them. You can find me at [hello@webbin.pl](mailto:hello@webbin.pl).
+Hopefully the concept was presented in a simple manner. It will probably take a while before I'll implement comments on my website, so if anyone have any questions - I will gladly answer them. You can find me at [hello@michalkotowski.pl](mailto:hello@michalkotowski.pl).

@@ -13,7 +13,7 @@
     box-shadow: $shadow01;
     // border: 1px solid $grey02;
     transform: translateY(0);
-    max-width: 375px;
+    max-width: 380px;
     width: 100%;
     text-align: right;
     position: relative;
@@ -30,6 +30,7 @@
         transform: translateY(-50%) translateX(0);
         background-color: $grey01;
         transition: .5s;
+        z-index: -1;
     }
     &:first-child {
         &:before {
@@ -38,7 +39,7 @@
     }
     &:last-child {
         &:before {
-            mask-image: url('../../images/mail01.svg');
+            mask-image: url('../../images/mail.svg');
             height: 150px;
             width: 150px;
             top: 50%;
@@ -63,6 +64,32 @@
         &:before {
             background-color: $grey03;
             transform: translateY(-50%) translateX(10px);
+        }
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .columns {
+        flex-direction: column;
+        justify-content: initial;
+    }
+    .card {
+        max-width: 100%;
+        &:first-child {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .card {
+        &:before {
+            background-color: $grey01;
+        }
+        &:hover {
+            &:before {
+                background-color: $grey01;
+            }
         }
     }
 }
