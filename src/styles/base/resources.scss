@@ -16,16 +16,16 @@ body {
     &.dark {
         transition: .5s;
         --white: #000000;
-        --grey10: #f8f9fa;
-        --grey09: #eceff1;
-        --grey08: #cdd4da;
-        --grey07: #aeb9c2;
-        --grey06: #8797a6;
-        --grey05: #607181;
-        --grey04: #495662;
-        --grey03: #343e46;
-        --grey02: #21282d;
-        --grey01: #0e1113;
+        --grey09: #f8f9fa;
+        --grey08: #eceff1;
+        --grey07: #cdd4da;
+        --grey06: #aeb9c2;
+        --grey05: #8797a6;
+        --grey04: #607181;
+        --grey03: #495662;
+        --grey02: #343e46;
+        --grey01: #21282d;
+        // --grey00: #0e1113;
     }
 }
 
