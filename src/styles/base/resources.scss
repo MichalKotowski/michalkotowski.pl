@@ -1,13 +1,33 @@
-$grey01: #f8f9fa;
-$grey02: #eceff1;
-$grey03: #cdd4da;
-$grey04: #aeb9c2;
-$grey05: #8797a6;
-$grey06: #607181;
-$grey07: #495662;
-$grey08: #343e46;
-$grey09: #21282d;
-$grey10: #0e1113;
+body {
+    --white: #ffffff;
+    --grey01: #f8f9fa;
+    --grey02: #eceff1;
+    --grey03: #cdd4da;
+    --grey04: #aeb9c2;
+    --grey05: #8797a6;
+    --grey06: #607181;
+    --grey07: #495662;
+    --grey08: #343e46;
+    --grey09: #21282d;
+    --grey10: #0e1113;
+}
+
+body {
+    &.dark {
+        transition: .5s;
+        --white: #000000;
+        --grey10: #f8f9fa;
+        --grey09: #eceff1;
+        --grey08: #cdd4da;
+        --grey07: #aeb9c2;
+        --grey06: #8797a6;
+        --grey05: #607181;
+        --grey04: #495662;
+        --grey03: #343e46;
+        --grey02: #21282d;
+        --grey01: #0e1113;
+    }
+}
 
 $shadow01: 0 0px 10px 0px rgba(0,0,0,0.01), 0 0px 5px 0px rgba(0,0,0,0.02), 0 0px 1px 0px rgba(0,0,0,0.03);
 $shadow02: 0 1px 20px 3px rgba(0,0,0,0.01), 0 1px 10px 2px rgba(0,0,0,0.02), 0 1px 5px 1px rgba(0,0,0,0.025), 0 1px 1px 0px rgba(0,0,0,0.03);

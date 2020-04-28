@@ -2,7 +2,7 @@
     width: 100%;
     padding: 20px 0;
     // border-bottom: 1px solid $grey02;
-    background-color: white;
+    background-color: var(--white);
     box-shadow: $shadow01;
     position: fixed;
     z-index: 10;
@@ -13,7 +13,7 @@
 .brand {
     margin-right: 20px;
     &:hover {
-        color: $grey04;
+        color: var(--grey04);
     }
 }
 
@@ -33,20 +33,62 @@
 
 .navigationItem {
     a {
-        color: $grey04;
+        color: var(--grey04);
         &:hover {
-            color: $grey08;
+            color: var(--grey08);
         }
     }
     .active {
-        color: $grey08;
+        color: var(--grey08);
     }
     .inactive {
-        color: $grey04;
+        color: var(--grey04);
     }
     &:not(:last-child) {
         margin-right: 40px;
     }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    display: none;
+}
+
+.toggle {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background: var(--grey03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    position: relative;
+    margin-left: 40px;
+    &:after {
+        content: '';
+        background: var(--white);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    }
+}
+
+.checkbox:checked + .toggle:after {
+    left: calc(100% - 5px);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 @media screen and (max-width: 600px) {
@@ -54,5 +96,8 @@
         &:not(:last-child) {
             margin-right: 20px;
         }
+    }
+    .toggle {
+        margin-left: 20px;
     }
 }

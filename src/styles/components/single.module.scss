@@ -1,12 +1,12 @@
 .author {
-    color: $grey03;
+    color: var(--grey03);
     font-size: 14px;
     margin-bottom: 40px;
     a {
-        color: $grey03;
+        color: var(--grey03);
         font-size: 14px;
         &:hover {
-            color: $grey05;
+            color: var(--grey05);
         }
     }
 }
@@ -20,8 +20,8 @@
 .back {
     display: inline-block;
     margin-top: 40px;
-    color: $grey03;
+    color: var(--grey03);
     &:hover {
-        color: $grey05;
+        color: var(--grey05);
     }
 }

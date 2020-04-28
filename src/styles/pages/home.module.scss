@@ -8,7 +8,7 @@
     display: inline-block;
     padding: 20px 25px 20px 25px;
     width: 100%;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 5px;
     box-shadow: $shadow01;
     // border: 1px solid $grey02;
@@ -28,7 +28,7 @@
         left: -25px;
         top: 50%;
         transform: translateY(-50%) translateX(0);
-        background-color: $grey01;
+        background-color: var(--grey01);
         transition: .5s;
         z-index: -1;
     }
@@ -48,21 +48,21 @@
         }
     }
     h5 {
-        color: $grey03;
+        color: var(--grey03);
     }
     p {
-        color: $grey08;
+        color: var(--grey08);
         font-weight: 400;
     }
     span {
-        color: $grey03;
+        color: var(--grey03);
     }
     &:hover {
         transform: translateY(-2px);
         transition: .1s;
         box-shadow: $shadow02;
         &:before {
-            background-color: $grey03;
+            background-color: var(--grey03);
             transform: translateY(-50%) translateX(10px);
         }
     }
@@ -84,11 +84,11 @@
 @media screen and (max-width: 420px) {
     .card {
         &:before {
-            background-color: $grey01;
+            background-color: var(--grey01);
         }
         &:hover {
             &:before {
-                background-color: $grey01;
+                background-color: var(--grey01);
             }
         }
     }

@@ -4,7 +4,7 @@
         display: inline-block;
         padding: 20px 25px;
         width: 100%;
-        background-color: white;
+        background-color: var(--white);
         border-radius: 5px;
         box-shadow: $shadow01;
         // border: 1px solid $grey02;
@@ -14,20 +14,20 @@
             justify-content: space-between;
             margin-bottom: 10px;
             p {
-                color: $grey08;
+                color: var(--grey08);
                 font-weight: 700;
             }
             span {
-                color: $grey03;
+                color: var(--grey03);
             }
         }
         .body {
             button {
                 background: transparent;
                 font-size: 12px;
-                color: $grey04;
+                color: var(--grey04);
                 padding: 5px 10px;
-                border: 1px solid $grey02;
+                border: 1px solid var(--grey02);
                 border-radius: 5px;
                 transition: .1s;
                 cursor: pointer;
@@ -35,9 +35,9 @@
                     margin-left: 10px;
                 }
                 &:hover {
-                    border: 1px solid $grey08;
-                    background-color: $grey08;
-                    color: $grey01;
+                    border: 1px solid var(--grey08);
+                    background-color: var(--grey08);
+                    color: var(--grey01);
                 }
             }
         }
@@ -55,14 +55,14 @@
 .back {
     display: inline-block;
     margin-top: 40px;
-    color: $grey03;
+    color: var(--grey03);
     &:hover {
-        color: $grey05;
+        color: var(--grey05);
     }
 }
 
 .category {
-    color: $grey03;
+    color: var(--grey03);
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     span {

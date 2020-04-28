@@ -7,12 +7,17 @@ export default class Header extends Component {
         isScrolled: false,
         isMobile: false,
         isLoaded: false,
+        isDarkMode: false,
     }
 
     componentDidMount() {
         this.handleMobile()
         window.addEventListener('scroll', this.handleScroll)
         window.addEventListener('resize', this.handleMobile)
+        if (window.localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark')
+            this.setState({ isDarkMode: true })
+        }
     }
 
     componentWillUnmount() {
@@ -37,7 +42,7 @@ export default class Header extends Component {
     }
 
     handleMobile = () => {
-        if (window.innerWidth < 380) {
+        if (window.innerWidth < 400) {
             this.setState({ isMobile: true })
         } else {
             this.setState({ isMobile: false })
@@ -45,7 +50,7 @@ export default class Header extends Component {
     }
     
     render() {
-        const { isScrolled, isMobile, isLoaded } = this.state
+        const { isScrolled, isMobile, isLoaded, isDarkMode } = this.state
         const { isThought } = this.props
 
         const isCurrentThought = props => {
@@ -59,6 +64,18 @@ export default class Header extends Component {
                 <Link to={props.to} activeClassName={style.active} className={isCurrentThought(props) && style.active}>{props.children}</Link>
             </li>
         )
+
+        const toggleDarkMode = () => {
+            if (isDarkMode === false) {
+                document.body.classList.add('dark')
+                this.setState({ isDarkMode: true })
+                window.localStorage.setItem('theme', 'dark')
+            } else {
+                document.body.classList.remove('dark')
+                this.setState({ isDarkMode: false })
+                window.localStorage.setItem('theme', 'light')
+            }
+        }
 
         return (
             <header 
@@ -76,10 +93,14 @@ export default class Header extends Component {
                     >
                         {isMobile ? `MK` : `Michał Kotowski`}
                     </Link>
-                    <ul className={style.navigation}>
-                        <ListLink to="/thoughts/">thoughts</ListLink>
-                        <ListLink to="/about/">about</ListLink>
-                    </ul>
+                    <div className={style.actions}>
+                        <ul className={style.navigation}>
+                            <ListLink to="/thoughts/">thoughts</ListLink>
+                            <ListLink to="/about/">about</ListLink>
+                        </ul>
+                        <input type="checkbox" className={style.checkbox} id="toggle" name="toggle" onClick={toggleDarkMode}></input>
+                        <label htmlFor="toggle" className={style.toggle}></label>
+                    </div>
                 </div>
             </header>
         )

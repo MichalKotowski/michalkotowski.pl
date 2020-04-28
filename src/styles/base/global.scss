@@ -20,13 +20,13 @@
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
-        background-color: $grey01;
+        background-color: var(--grey01);
         overflow-y: scroll;
         overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        color: $grey08;
+        color: var(--grey08);
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
         transition: .2s;
@@ -56,7 +56,7 @@
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
         line-height: 30px;
-        letter-spacing: 1px;
+        // letter-spacing: 1px;
         font-weight: 400;
     }
 
@@ -67,7 +67,7 @@
     }
 
     p, a, span {
-        color: $grey08;
+        color: var(--grey08);
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
         line-height: 30px;
