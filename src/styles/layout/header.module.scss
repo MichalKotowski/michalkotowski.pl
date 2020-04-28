@@ -12,9 +12,17 @@
 
 .brand {
     margin-right: 20px;
+    color: var(--grey04);
+    // &:hover {
+    //     color: var(--grey04);
+    // }
     &:hover {
-        color: var(--grey04);
+        color: var(--grey08);
     }
+}
+
+.active {
+    color: var(--grey08);
 }
 
 .container {
@@ -34,18 +42,17 @@
 .navigationItem {
     a {
         color: var(--grey04);
-        &:hover {
+    }
+    &:not(:last-child) {
+        margin-right: 40px;
+    }
+    &:hover {
+        a {
             color: var(--grey08);
         }
     }
     .active {
         color: var(--grey08);
-    }
-    .inactive {
-        color: var(--grey04);
-    }
-    &:not(:last-child) {
-        margin-right: 40px;
     }
 }
 

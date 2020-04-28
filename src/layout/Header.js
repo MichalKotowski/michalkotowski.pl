@@ -61,7 +61,7 @@ export default class Header extends Component {
 
         const ListLink = (props) => (
             <li className={style.navigationItem}>
-                <Link to={props.to} activeClassName={style.active} className={isCurrentThought(props) && style.active}>{props.children}</Link>
+                <Link to={props.to} className={isCurrentThought(props) && style.active} activeClassName={style.active}>{props.children}</Link>
             </li>
         )
 
@@ -90,6 +90,7 @@ export default class Header extends Component {
                         to="/"
                         className={style.brand}
                         style={{fontWeight: isMobile ? 700 : 400}}
+                        activeClassName={style.active}
                     >
                         {isMobile ? `MK` : `Michał Kotowski`}
                     </Link>
