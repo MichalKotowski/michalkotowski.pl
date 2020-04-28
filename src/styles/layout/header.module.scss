@@ -69,6 +69,7 @@
     border-radius: 100px;
     position: relative;
     margin-left: 40px;
+    transition: .5s;
     &:after {
         content: '';
         background: var(--white);
@@ -79,6 +80,10 @@
         top: 3px;
         left: 4px;
         transition: cubic-bezier(0.7, -0.5, 0.3, 1.5) .5s;
+    }
+    &:hover {
+        transition: .5s;
+        background: var(--grey06);
     }
 }
 

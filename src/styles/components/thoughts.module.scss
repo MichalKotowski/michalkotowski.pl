@@ -46,6 +46,11 @@
             transition: .1s;
             box-shadow: $shadow02;
         }
+        &:active {
+            transform: translateY(0);
+            transition: .1s;
+            box-shadow: $shadow01;
+        }
     }
     .tag {
         z-index: 10;

@@ -18,6 +18,7 @@
     text-align: right;
     position: relative;
     overflow: hidden;
+    transition: .1s;
     &:before {
         content: '';
         mask-size: cover;
@@ -65,6 +66,11 @@
             background-color: var(--grey03);
             transform: translateY(-50%) translateX(10px);
         }
+    }
+    &:active {
+        transform: translateY(0);
+        transition: .1s;
+        box-shadow: $shadow01;
     }
 }
 
