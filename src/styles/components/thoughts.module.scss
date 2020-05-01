@@ -30,6 +30,7 @@
                 border: 1px solid var(--grey02);
                 border-radius: 5px;
                 transition: .1s;
+                outline: none;
                 cursor: pointer;
                 &:not(:first-child) {
                     margin-left: 10px;
@@ -54,6 +55,10 @@
     }
     .tag {
         z-index: 10;
+        position: relative;
+        &::-moz-focus-inner {
+            border: 0;
+        }
     }
 }
 

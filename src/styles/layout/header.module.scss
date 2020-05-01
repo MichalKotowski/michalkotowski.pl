@@ -13,9 +13,6 @@
 .brand {
     margin-right: 20px;
     color: var(--grey04);
-    // &:hover {
-    //     color: var(--grey04);
-    // }
     &:hover {
         color: var(--grey08);
     }
@@ -42,6 +39,7 @@
 .navigationItem {
     a {
         color: var(--grey04);
+        display: inline-block;
     }
     &:not(:last-child) {
         margin-right: 40px;

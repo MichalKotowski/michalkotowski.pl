@@ -74,6 +74,11 @@
         font-weight: 400;
         text-decoration: none;
         transition: .2s;
+        outline: none;
+    }
+
+    button {
+        outline: none;
     }
 
     .gatsby-highlight {

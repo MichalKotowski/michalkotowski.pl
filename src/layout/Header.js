@@ -87,7 +87,7 @@ export default class Header extends Component {
             >
                 <div className={style.container}>
                     <Link
-                        to="/"
+                        to=""
                         className={style.brand}
                         style={{fontWeight: isMobile ? 700 : 400}}
                         activeClassName={style.active}
