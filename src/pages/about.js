@@ -5,12 +5,12 @@ import style from "../styles/components/about.module.scss"
 
 export default () => (
     <>
-        <SEO title='About' />
+        <SEO title='About' description="My name is Michał Kotowski. I'm an artist, designer and developer. Currently living in Warsaw, working remotely for a creative agency based in UK, London"/>
         <h4 className={style.heading}>
             Hello, World!
         </h4>
         <p>
-            I'm <strong>Michał Kotowski</strong>, an artist, designer, and developer. Currently I live in Warsaw, working remotely for a creative agency based in UK, London.
+            I'm <strong>Michał Kotowski</strong>, an artist, designer and developer. Currently I live in Warsaw, working remotely for a creative agency based in UK, London.
             I love being among nature, riding a bike and broadening my competences across all the topics.
         </p>
         <p>

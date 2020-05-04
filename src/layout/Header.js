@@ -8,12 +8,15 @@ export default class Header extends Component {
         isMobile: false,
         isLoaded: false,
         isDarkMode: false,
+        isHomepage: false,
     }
 
     componentDidMount() {
         this.handleMobile()
+        this.handleHomepage()
         window.addEventListener('scroll', this.handleScroll)
         window.addEventListener('resize', this.handleMobile)
+        window.addEventListener('click', this.handleHomepage)
         if (window.localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark')
             this.setState({ isDarkMode: true })
@@ -23,6 +26,7 @@ export default class Header extends Component {
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll)
         window.removeEventListener('resize', this.handleMobile)
+        window.removeEventListener('resize', this.handleHomepage)
     }
 
     componentDidUpdate() {
@@ -31,6 +35,15 @@ export default class Header extends Component {
                 this.setState({isLoaded: true})
             }
         }, 1)
+    }
+
+    handleHomepage = () => {
+        const url = window.location.href
+        if (url.endsWith('.pl/') || url.endsWith('.pl') || url.endsWith(':8000') || url.endsWith(':8000/')) {
+            this.setState({ isHomepage: true })
+        } else {
+            this.setState({ isHomepage: false })
+        }
     }
 
     handleScroll = () => {
@@ -50,20 +63,8 @@ export default class Header extends Component {
     }
     
     render() {
-        const { isScrolled, isMobile, isLoaded, isDarkMode } = this.state
+        const { isScrolled, isMobile, isLoaded, isDarkMode, isHomepage } = this.state
         const { isThought } = this.props
-
-        const isCurrentThought = props => {
-            if (isThought === true && props.children === 'thoughts') {
-                return true
-            }
-        }
-
-        const ListLink = (props) => (
-            <li className={style.navigationItem}>
-                <Link to={props.to} className={isCurrentThought(props) && style.active} activeClassName={style.active}>{props.children}</Link>
-            </li>
-        )
 
         const toggleDarkMode = () => {
             if (isDarkMode === false) {
@@ -87,17 +88,23 @@ export default class Header extends Component {
             >
                 <div className={style.container}>
                     <Link
-                        to=""
+                        to="/"
                         className={style.brand}
-                        style={{fontWeight: isMobile ? 700 : 400}}
-                        activeClassName={style.active}
+                        style={{
+                            fontWeight: isMobile ? 700 : 400,
+                            color: isHomepage && 'var(--grey08)'
+                        }}
                     >
                         {isMobile ? `MK` : `Michał Kotowski`}
                     </Link>
                     <div className={style.actions}>
                         <ul className={style.navigation}>
-                            <ListLink to="/thoughts/">thoughts</ListLink>
-                            <ListLink to="/about/">about</ListLink>
+                            <li className={style.navigationItem}>
+                                <Link to="/thoughts/" style={{ color: isThought && 'var(--grey08)' }} activeClassName={style.active}>Thoughts</Link>
+                            </li>
+                            <li className={style.navigationItem}>
+                                <Link to="/about/" activeClassName={style.active}>About</Link>
+                            </li>
                         </ul>
                         <input type="checkbox" className={style.checkbox} id="toggle" name="toggle" onClick={toggleDarkMode}></input>
                         <label htmlFor="toggle" className={style.toggle}></label>

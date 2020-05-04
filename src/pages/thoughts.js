@@ -19,7 +19,7 @@ export default class Thoughts extends Component {
 
         return (
             <>
-                <SEO title='Thoughts' />
+                <SEO title='Thoughts' description="My name is Michał Kotowski and whenever I have enough time, I love to share my thoughts about almost everything"/>
                 <h4>
                     Whenever I have enough time, I love to <br></br>
                     share my thoughts about almost everything

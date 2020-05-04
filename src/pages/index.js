@@ -4,7 +4,7 @@ import style from "../styles/pages/home.module.scss"
 
 export default () => (
     <>
-        <SEO title='Home' />
+        <SEO title='Home' description="My name is Michał Kotowski - I'm a web developer based in Warsaw with experience across design, digital, print and brand identity"/>
         <h4>
             I’m a web developer based in Warsaw <br></br>
             with experience across design, digital, print, and brand identity.
