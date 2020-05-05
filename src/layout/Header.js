@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import style from "../styles/layout/header.module.scss"
+import { globalHistory } from '@reach/router'
 
 export default class Header extends Component {
     state = {
@@ -17,8 +18,10 @@ export default class Header extends Component {
         window.addEventListener('scroll', this.handleScroll)
         window.addEventListener('resize', this.handleMobile)
         window.addEventListener('click', this.handleHomepage)
-        if (window.localStorage.getItem('theme') === 'dark') {
+        const isColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)')
+        if (window.localStorage.getItem('theme') === 'dark' || isColorSchemeDark.matches === true) {
             document.body.classList.add('dark')
+            document.getElementById("toggle").checked = true
             this.setState({ isDarkMode: true })
         }
     }
@@ -38,8 +41,8 @@ export default class Header extends Component {
     }
 
     handleHomepage = () => {
-        const url = window.location.href
-        if (url.endsWith('.pl/') || url.endsWith('.pl') || url.endsWith(':8000') || url.endsWith(':8000/')) {
+        const url = globalHistory.location.pathname
+        if (url === '/') {
             this.setState({ isHomepage: true })
         } else {
             this.setState({ isHomepage: false })

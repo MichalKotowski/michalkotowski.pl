@@ -4,6 +4,20 @@
     margin-top: 40px;
 }
 
+.heading {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    h5 {
+        font-weight: 700;
+    }
+    a {
+        &:hover {
+            color: var(--grey04);
+        }
+    }
+}
+
 .card {
     display: inline-block;
     padding: 20px 25px 20px 25px;
