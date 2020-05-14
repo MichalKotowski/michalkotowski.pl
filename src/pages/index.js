@@ -2,21 +2,11 @@ import React, { Component } from "react"
 import SEO from "../components/SEO"
 import style from "../styles/pages/home.module.scss"
 import styleThoughts from "../styles/components/thoughts.module.scss"
-import { Link, graphql, navigate } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 export default class Index extends Component {
     render() {
         const { data } = this.props
-
-        function tagRedirect(category, event) {
-            let slug = category.replace(/\s/g, '-').toLowerCase()
-            if (event.keyCode === 13) {
-                navigate(`/tag/${slug}`)
-            } else {
-                event.preventDefault()
-                navigate(`/tag/${slug}`)
-            }
-        }
 
         return (
             <>
@@ -47,11 +37,6 @@ export default class Index extends Component {
                             <div className={styleThoughts.head}>
                                 <p>{node.frontmatter.title}</p>
                                 <span>{node.frontmatter.date}</span>
-                            </div>
-                            <div className={styleThoughts.body}>
-                                {node.frontmatter.tags.map(( category, index ) => (
-                                    <button onClick={(event) => tagRedirect(category, event)} onKeyDown={(event) => tagRedirect(category, event)} key={index} className={style.tag}>{category}</button>
-                                ))}
                             </div>
                         </Link>
                     </div>

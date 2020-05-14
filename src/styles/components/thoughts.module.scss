@@ -12,7 +12,6 @@
         .head {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
             p {
                 color: var(--grey08);
                 font-weight: 700;
@@ -22,6 +21,7 @@
             }
         }
         .body {
+            margin-top: 10px;
             button {
                 background: transparent;
                 font-size: 12px;
@@ -90,7 +90,6 @@
             .head {
                 justify-content: initial;
                 flex-direction: column;
-                margin-bottom: 20px;
                 p {
                     line-height: 24px;
                 }
@@ -98,6 +97,9 @@
                     font-size: 12px;
                     line-height: 24px;
                 }
+            }
+            .body {
+                margin-top: 20px;
             }
         }
     }

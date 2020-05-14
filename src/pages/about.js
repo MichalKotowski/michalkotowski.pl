@@ -1,9 +1,10 @@
 import React from "react"
-import me from "../images/michalkotowski.jpg"
+import { graphql } from "gatsby"
 import SEO from "../components/SEO"
 import style from "../styles/components/about.module.scss"
+import Img from "gatsby-image"
 
-export default () => (
+const About = (props) => (
     <>
         <SEO title='About' description="My name is Michał Kotowski. I'm an artist, designer and developer. Currently living in Warsaw, working remotely for a creative agency based in UK, London"/>
         <h4 className={style.heading}>
@@ -16,6 +17,20 @@ export default () => (
         <p>
             I would like to thank the creators of lofi hip hop without whom I would not be able to concentrate and achieve all the things I have achieved.
         </p>
-        <img className={style.image} src={me} alt="Michał Kotowski" />
+        <Img className={style.image} fluid={props.data.me.childImageSharp.fluid} alt="Michał Kotowski" />
     </>
 )
+
+export default About
+
+export const pageQuery = graphql`
+    query {
+        me: file(relativePath: { eq: "images/michalkotowski.jpg" }) {
+            childImageSharp {
+                fluid(quality: 100, maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`;
