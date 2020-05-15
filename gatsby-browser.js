@@ -1,6 +1,6 @@
-require("./src/styles/utils/prism-okaidia.css")
+import "./src/styles/utils/prism-okaidia.css"
 
-exports.shouldUpdateScroll = () => {
+export function shouldUpdateScroll() {
     setTimeout(() => {
         window.scrollTo(0, 0)
     }, 500)
