@@ -66,17 +66,16 @@
         line-height: 25px;
     }
 
-    div:not(.gatsby-highlight) {
-        p, a, span {
-            color: var(--grey08);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            line-height: 30px;
-            font-weight: 400;
-            text-decoration: none;
-            transition: .2s;
-            outline: none;
-        }
+
+    p, a, span {
+        color: var(--grey08);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: .2s;
+        outline: none;
     }
 
     button {
