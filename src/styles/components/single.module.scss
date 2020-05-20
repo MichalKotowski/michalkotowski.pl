@@ -15,6 +15,26 @@
     p:not(:last-child) {
         margin-bottom: 40px;
     }
+    a {
+        color: var(--grey06);
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 0px;
+            height: 1px;
+            background-color: var(--grey06);
+            transition: all 0.25s cubic-bezier(0.650, 0.050, 0.350, 1) 0s;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .back {
